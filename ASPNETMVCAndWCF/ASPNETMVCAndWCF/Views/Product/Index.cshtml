@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>List Products</h3>
+    @using (Html.BeginForm("search", "product"))
+    {
+        <input type="text" name="keyword" /><input type="submit" value="Search"/>
+        <br />
+        <input type="radio" name="condition" value="byID" checked="checked"/> <span>By Id</span>
+        <input type="radio" name="condition" value="byDate"/> <span>By Creation Date</span>
+    }
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Creation Date</th>
+        </tr>
+        @foreach (var product in ViewBag.listProducts)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@product.CreationDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+            }
+    </table>
+</body>
+</html>
