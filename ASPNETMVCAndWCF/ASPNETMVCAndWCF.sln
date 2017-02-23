@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETMVCAndWCF", "ASPNETMVCAndWCF\ASPNETMVCAndWCF.csproj", "{2E6B77E5-3E68-415E-B96A-CC77E851C7D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWcfService", "..\MyWcfService\MyWcfService.csproj", "{160C41B6-F20D-44BD-97F7-061A65D32558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E6B77E5-3E68-415E-B96A-CC77E851C7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E6B77E5-3E68-415E-B96A-CC77E851C7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E6B77E5-3E68-415E-B96A-CC77E851C7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160C41B6-F20D-44BD-97F7-061A65D32558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160C41B6-F20D-44BD-97F7-061A65D32558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160C41B6-F20D-44BD-97F7-061A65D32558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160C41B6-F20D-44BD-97F7-061A65D32558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
