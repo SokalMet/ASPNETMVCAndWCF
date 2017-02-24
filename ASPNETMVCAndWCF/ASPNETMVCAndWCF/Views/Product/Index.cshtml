@@ -8,35 +8,63 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <title>Index</title>
 </head>
 <body>
-    <h3>List Products</h3>
-    @using (Html.BeginForm("search", "product"))
-    {
-        <input type="text" name="keyword" /><input type="submit" value="Search"/>
-        <br />
-        <input type="radio" name="condition" value="byID" checked="checked"/> <span>By Id</span>
-        <input type="radio" name="condition" value="byDate"/> <span>By Creation Date</span>
-    }
-    <table cellpadding="2" cellspacing="2" border="1">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Creation Date</th>
-        </tr>
-        @foreach (var product in ViewBag.listProducts)
-        {
-            <tr>
-                <td>@product.Id</td>
-                <td>@product.Name</td>
-                <td>@product.Price</td>
-                <td>@product.Quantity</td>
-                <td>@product.CreationDate.ToString("dd/MM/yyyy")</td>
-            </tr>
-            }
-    </table>
+    <div>
+        <div class="row">
+            <div class="col-sm-4" style="margin:10px">
+                <h3>List Products</h3>
+                <table cellpadding="2" cellspacing="2" border="1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Creation Date</th>
+                    </tr>
+                    @foreach (var product in ViewBag.listProducts)
+                    {
+                        <tr>
+                            <td>@product.Id</td>
+                            <td>@product.Name</td>
+                            <td>@product.Price</td>
+                            <td>@product.Quantity</td>
+                            <td>@product.CreationDate.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="col-sm-3"  style="margin:10px">
+                <h3>Search Products</h3>
+
+                @using (Html.BeginForm("search", "product"))
+            {
+                    <input type="text" name="keyword" /><input type="submit" value="Search" />
+                    <br />
+                    <input type="radio" name="condition" value="byID" checked="checked" /> <span>By Id</span>
+                    <input type="radio" name="condition" value="byDate" /> <span>By Creation Date</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                1
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                2
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                3
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -20,13 +20,14 @@ namespace ASPNETMVCAndWCF.Controllers
         public ActionResult Search(FormCollection fc)
         {
             string condition = fc["condition"];
-            string keyword = fc["keyword"];
+            string keyword = fc["keyword"].Length>0?fc["keyword"]:"1";
             if (condition.Equals("byID"))
             {
                 ViewBag.listProducts = psc.find(Convert.ToInt32(keyword));
             }
             else
             {
+                keyword = keyword == "1" ? DateTime.Now.ToShortDateString() : keyword;
                 ViewBag.listProducts = psc.findByDate(Convert.ToDateTime(keyword));
             }
             return View("Index");
